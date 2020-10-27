@@ -1,0 +1,17 @@
+##Randomization of samples by R
+
+# directory setting
+getwd()
+setwd("D:/Name_of_folder/")
+
+# Reading spreadsheet. Example with file saved in .csv with ";" as separator. The column named "NUMBER" will be randomized.
+load_data<- read.csv("name_of_file.csv", sep=";")
+
+#extrair a coluna com o número da ficha
+column_NUMBER <- load_data$NUMBER
+
+# Randomizing column "NUMBER"
+randomized_data <- sample(column_NUMBER)
+
+# Export randomized file as .csv
+write.csv(randomized_data, "D:/Name_of_folder/Randomized_by_R.csv", row.names=FALSE)
