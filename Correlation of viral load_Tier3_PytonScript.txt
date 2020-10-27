@@ -1,0 +1,30 @@
+##Correlation _Viral load_Tier3
+
+import os
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
+from sklearn.model_selection import cross_val_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
+from sklearn import tree
+from mpl_toolkits.mplot3d import Axes3D 
+import pylab
+
+data=pd.read_excel("Tier3_pos.xlsx") #only positive samples
+
+data.head()
+data.columns.unique()
+data=data.loc[:,['S/N IGM (log2)','S/N DGI(log2)', 'Ratio IGM/IS (log2)','Viral Load']]
+data.head()
+plt.clf()
+pd.plotting.scatter_matrix(dados5,figsize=(12,12),diagonal='hist',alpha=1)
+plt.show()
+data.corr()
