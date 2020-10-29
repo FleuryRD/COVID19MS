@@ -2,7 +2,7 @@
 
 import pandas as pd 
 
-data=pd.read_excel('"Tier1.xlsx")
+data=pd.read_excel("Tier1.xlsx")
 data["result"]=data.apply(lambda x: "P" if (x["Ratio IGM/IGM heavy"] >=0.117 and x["Ratio DGI/DGI heavy"] >=0.162) else "N",axis=1)
 data.head()
 data.to_csv("Tier1_column_result.csv",index=False)
