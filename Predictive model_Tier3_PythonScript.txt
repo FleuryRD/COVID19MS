@@ -1,0 +1,8 @@
+##Predictive model_ Tier 3
+
+import pandas as pd 
+
+data_tier3=pd.read_excel("Master_datasheet_Tier3.xlsx")
+data_tier3["result"]=data_tier3.apply(lambda x: "P" if (x["S/N IGM"] >=0.165 and x["S/N DGI"] >=0.83 and x["Ratio IGM/IS"]>=0.04) else "N",axis=1),axis=1)
+data_tier3.head()
+data_tier3.to_csv("Tier3_result.csv",index=False)
